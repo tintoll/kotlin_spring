@@ -55,7 +55,7 @@ fun main() {
     println(MyClass.a)
     println(MyClass.newInstance())
     // Companion 붙여서 호출되 된다. 하지만 사용하지 않는다.
-    // 클래스 이름을 주면 그이름을 주면 된다. 
+    // 클래스 이름을 주면 그이름을 주면 된다.
     println(MyClass.Companion.a)
     println(MyClass.Companion.newInstance())
 
