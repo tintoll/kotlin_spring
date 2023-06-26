@@ -3,8 +3,8 @@ POST http://localhost:8080/api/v1/issues
 Content-Type: application/json
 
 {
-  "summary": "테스트",
-  "description": "테스트 내용",
+  "summary": "테스트 2 ",
+  "description": "테스트 2 내용",
   "type": "TASK",
   "priority": "LOW",
   "status": "TODO"
@@ -12,3 +12,7 @@ Content-Type: application/json
 
 ### 이슈 목록 전체 조회
 GET http://localhost:8080/api/v1/issues
+
+
+### 이슈 상세 조회
+GET http://localhost:8080/api/v1/issues/1
