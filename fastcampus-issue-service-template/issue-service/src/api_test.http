@@ -42,3 +42,11 @@ Content-Type: application/json
 {
   "body": "코멘트 1111 입니다."
 }
+
+### 코멘트 수정
+PUT http://localhost:8080/api/v1/issue/1/comments/1
+Content-Type: application/json
+
+{
+  "body": "수정입니다."
+}

@@ -32,4 +32,11 @@ class CommentService(
         return commentRepository.save(comment).toResponse()
     }
 
+    fun edit(id: Long, userId: Long, request: CommentRequest): CommentResponse? {
+        return commentRepository.findByIdAndUserId(id, userId)?.run {
+            body = request.body
+            commentRepository.save(this).toResponse()
+        }
+    }
+
 }
