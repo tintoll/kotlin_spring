@@ -26,5 +26,9 @@ class Issue (
     var priority : IssuePriority,
     @Column
     @Enumerated(EnumType.STRING)
-    var status : IssueStatus
+    var status : IssueStatus,
+
+    @OneToMany(fetch = FetchType.EAGER)
+    var comments : MutableList<Comment> = mutableListOf()
+
     ) : BaseEntity()

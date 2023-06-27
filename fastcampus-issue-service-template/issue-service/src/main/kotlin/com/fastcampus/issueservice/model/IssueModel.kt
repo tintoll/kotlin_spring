@@ -1,5 +1,6 @@
 package com.fastcampus.issueservice.model
 
+import com.fastcampus.issueservice.domain.Comment
 import com.fastcampus.issueservice.domain.Issue
 import com.fastcampus.issueservice.domain.enums.IssuePriority
 import com.fastcampus.issueservice.domain.enums.IssueStatus
@@ -28,6 +29,7 @@ data class IssueResponse(
     val createdAt: LocalDateTime?,
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     val updatedAt: LocalDateTime?,
+    val comments : List<CommentResponse> = emptyList(),
 ) {
     companion object {
         // with를 쓴이유가 issue.id, issue.summary를 안해서 사용한듯
@@ -42,7 +44,8 @@ data class IssueResponse(
                     priority = priority,
                     status = status,
                     createdAt = createdAt,
-                    updatedAt = updatedAt
+                    updatedAt = updatedAt,
+                    comments = comments.sortedByDescending(Comment::id).map(Comment::toResponse),
                 )
             }
     }
